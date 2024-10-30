@@ -86,6 +86,30 @@
             </div>
           </div>
         </div>
-    </div>  
+    </div>
+      function calcular (tipo,valor){
+            if (tipo === 'acao'){
+
+                //limapar o campo do resultado
+                if (valor ==='c'){
+                    document.getElementById ('resultado').value =''
+                }
+
+                //verificar operações matemáticas
+                if (valor ==='+'|| valor === '-'|| valor ==='*' ||valor ==='/'||valor ==='.' ) {
+                    document.getElementById ('resultado').value += valor
+                }
+
+                //resultado
+                if(valor === '='){
+                    valorcampo = eval(document.getElementById('resultado').value)
+                    document.getElementById('resultado').value = valorcampo
+
+                }
+            }else if (tipo === 'valor'){
+                document.getElementById('resultado').value +=valor
+            }
+        }
+    </script>
 </body>
 </html>
